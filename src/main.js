@@ -1,5 +1,9 @@
 import data from './data/potter/potter.js'
 import {orderData, filterGender, filterHouse, filterAncestry, filterStaff} from './data.js'
+
+const dataPotter=data; //creamos una constante de la data que nos entregan
+let dataArray=Object.values(dataPotter);//creamos un arreglo de objetos con la data
+
 //Creamos el modal de cada personaje con su correspondiente información
 function createModal (dataArray) {
     let modal=document.getElementById("myModal"); //Modal general html
@@ -23,20 +27,20 @@ function createModal (dataArray) {
                         <p>${dataArray[i].house}</p>
                     </div>
                     <div class="characterInformation2">
-                        <p>Especie: ${dataArray[i].species}</p>
-                        <p>Género: ${dataArray[i].gender}</p>
-                        <p>Fecha de nacimiento: ${dataArray[i].dateOfBirth}</p>
-                        <p>Año de nacimiento: ${dataArray[i].yearOfBirth}</p>
-                        <p>Ascendencia: ${dataArray[i].ancestry}</p>
-                        <p>Color de ojos: ${dataArray[i].eyeColour}</p>
-                        <p>Color de cabello: ${dataArray[i].hairColour}</p>
-                        <p>Actor/Actriz: ${dataArray[i].actor}</p>
-                        <p>Estado: ${dataArray[i].alive}</p><br>
-                        <h4>Varita mágica</h4>
-                        <p>Madera: ${dataArray[i].wand.wood}</p>
-                        <p>Núcleo: ${dataArray[i].wand.core}</p>
-                        <p>Longitud: ${dataArray[i].wand.length}</p>
-                        <p>Patronus: ${dataArray[i].patronus}</p>
+                        <p><strong>Especie:</strong> ${dataArray[i].species}</p>
+                        <p><strong>Género:</strong> ${dataArray[i].gender}</p>
+                        <p><strong>Fecha de nacimiento:</strong> ${dataArray[i].dateOfBirth}</p>
+                        <p><strong>Año de nacimiento:</strong> ${dataArray[i].yearOfBirth}</p>
+                        <p><strong>Ascendencia:</strong> ${dataArray[i].ancestry}</p>
+                        <p><strong>Color de ojos:</strong> ${dataArray[i].eyeColour}</p>
+                        <p><strong>Color de cabello:</strong> ${dataArray[i].hairColour}</p>
+                        <p><strong>Actor/Actriz:</strong> ${dataArray[i].actor}</p>
+                        <p><strong>Estado:</strong> ${dataArray[i].alive}</p><br>
+                        <h3><strong>Varita mágica</strong></h3>
+                        <p><strong>Madera:</strong> ${dataArray[i].wand.wood}</p>
+                        <p><strong>Núcleo:</strong> ${dataArray[i].wand.core}</p>
+                        <p><strong>Longitud:</strong> ${dataArray[i].wand.length}</p>
+                        <p><strong>Patronus:</strong> ${dataArray[i].patronus}</p>
                     </div>
                 </div>
             </div>`;
@@ -54,6 +58,8 @@ function createModal (dataArray) {
         }
     }   
 }
+
+
 //Esconde y trae la página de bienvenida y la página de información
 document.getElementById("homePage").style.display = "none"; //escondemos la página de información
 let enterButton = document.getElementById("enterButton"); //Guarda boton de ingreso (sombrero)
@@ -61,9 +67,9 @@ enterButton.addEventListener('click', ()=>{ //evento click en el botón
     document.getElementById("welcome").style.display = "none";
     document.getElementById("homePage").style.display = "block";
 });
+
+
 //Traemos todos los personajes al inicio de la página
-const dataPotter=data; //creamos una constante de la data que nos entregan
-let dataArray=Object.values(dataPotter);//creamos un arreglo de objetos con la data
 const characters = document.getElementById("characters");
 for(let i=0;i<dataArray.length;i++){    //for que recorre la data e inserta todos los personajes en la página principal
    characters.innerHTML += `
@@ -74,6 +80,8 @@ for(let i=0;i<dataArray.length;i++){    //for que recorre la data e inserta todo
     </div>`;
     createModal(dataArray);
 }
+
+
 //Ordenamos todos los personajes en orden alfabético
 const select = document.getElementById("alphabeticalSearch");
 select.addEventListener("change", () =>{ //creamos un listener para cuando se produzca un cambio en el selector.
@@ -91,6 +99,8 @@ select.addEventListener("change", () =>{ //creamos un listener para cuando se pr
          createModal(orderResult);
     }
 })
+
+
 //Búsqueda de personajes en tiempo real
 search.addEventListener("keyup",()=>{
     const search = document.querySelector("#search").value; //Traemos la información que ingresa el usuario.
@@ -119,6 +129,8 @@ search.addEventListener("keyup",()=>{
         </div>`;
     }
 })
+
+
 //Creamos filtro de género
 const selectGender = document.getElementById("genderSearch");
 selectGender.addEventListener("change", () =>{
@@ -135,6 +147,8 @@ selectGender.addEventListener("change", () =>{
          createModal(genderResult);
     }
 })
+
+
 //Creamos filtro de casa
 const selectHouse = document.getElementById("houseSearch");
 selectHouse.addEventListener("change", () =>{
@@ -151,6 +165,8 @@ selectHouse.addEventListener("change", () =>{
          createModal(houseResult);
     }
 })
+
+
 //Creamos filtro de linaje
 const selectAncestry = document.getElementById("ancestrySearch");
 selectAncestry.addEventListener("change", () =>{
@@ -167,6 +183,8 @@ selectAncestry.addEventListener("change", () =>{
          createModal(ancestryResult);
     }
 })
+
+
 //Creamos filtro de rol profesor
 const selectStaff = document.getElementById("staffSearch");
 selectStaff.addEventListener("change", () =>{
@@ -184,3 +202,14 @@ selectStaff.addEventListener("change", () =>{
     }
 })
 
+function translate(dataArray){
+    let traduccion= [];
+    for(let i=0; i<dataArray.length;i++){
+      if(dataArray[i] == ["human"]){
+        traduccion.push(["Humano"]);
+      }else if (dataArray[i] == "male"){
+        traduccion.push("Hombre");
+        }
+    }
+    return traduccion;
+}

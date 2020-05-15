@@ -2,9 +2,12 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    cursor: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/happy.png"), auto;
-      
-      
+    /*cursor: url(http://www.rw-designer.com/cursor-extern.php?id=26749), pointer;*/
+    /*cursor: url(http://www.rw-designer.com/cursor-extern.php?id=26756),pointer;*/
+    cursor: url(http://cur.cursors-4u.net/others/oth-3/oth246.cur), progress;
+    /*cursor: url(http://cur.cursors-4u.net/others/oth-3/oth267.cur), progress;*/
+    /*cursor: url(http://cur.cursors-4u.net/others/oth-3/oth269.cur), progress;*/
+    
 }
 
 /*-----------------------------------------------------------------------------
@@ -82,7 +85,7 @@
                 background-size: 200px 200px;
                 background-repeat: no-repeat;
                 transition: 0.3s;
-                cursor: pointer;
+                cursor: url(http://cur.cursors-4u.net/user/use-1/use160.cur), pointer;
             }
             #enterButton:hover{
                 transform: scale(1.2);
@@ -175,7 +178,7 @@
                 color: #000;
                 margin: 10px;
                 border-radius: 5px;
-                cursor: pointer;
+                cursor: url(http://cur.cursors-4u.net/user/use-1/use160.cur), pointer;
             }
 
     #section{
@@ -229,8 +232,9 @@
                     color: #000;
                     margin: 10px;
                     border-radius: 5px;
-                    cursor: pointer;
+                    cursor: url(http://cur.cursors-4u.net/user/use-1/use160.cur), pointer;
                 }
+                
             #returnButton{
                 display: flex;
                 flex-wrap: wrap;
@@ -245,7 +249,7 @@
                     background-repeat: no-repeat;
         
                     transition: 0.3s;
-                    cursor: pointer;
+                    cursor: url(http://cur.cursors-4u.net/others/oth-3/oth246.cur), pointer;
                 }
                 #backButton:hover{
                     transform: scale(1.2);
@@ -279,7 +283,7 @@
                     height: 200px;
                     border-radius: 50%;
                     object-fit: cover; /*para que la imagen no quede chatita*/
-                    cursor: pointer;
+                    cursor: url(http://cur.cursors-4u.net/user/use-1/use160.cur), pointer;
                 }
                 .root > img:hover{
                     transition: 0.4s;
@@ -382,7 +386,7 @@
             .close:hover, .close:focus {
                 color: #000;
                 text-decoration: none;
-                cursor: pointer;
+                cursor: url(http://cur.cursors-4u.net/user/use-1/use160.cur), pointer;
             }
 
 /*-----------------------------------------------------------------------------
