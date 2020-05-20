@@ -36,26 +36,6 @@ const orderDataArray=[
   }
 ]
 
-const orderMale=[
-  {
-    name: 'Ron Weasley',
-    gender: 'male',
-    house: 'Gryffindor'
-  },
-  {
-    name: 'Harry Potter',
-    gender: 'male',
-    house: 'Gryffindor'
-  }
-]
-const orderFemale=[
-  {
-    name: 'Hermione Granger',
-    gender: 'female',
-    house: 'Gryffindor'
-  }
-]
-
 const orderHouse=[
   {
     name: 'Ron Weasley',
@@ -67,13 +47,6 @@ const orderHouse=[
     gender: 'male',
     house: 'Gryffindor'
   },
-  {
-    name: 'Draco Malfoy',
-    gender: 'male',
-    house: 'Slytherin'
-  }
-]
-const orderFilterHouse=[
   {
     name: 'Draco Malfoy',
     gender: 'male',
@@ -101,14 +74,6 @@ const orderAncestry=[
     ancestry: 'pure-blood'
   }
 ]
-const orderFilterAncestry=[
-  {
-    name: 'Ron Weasley',
-    gender: 'male',
-    house: 'Gryffindor',
-    ancestry: 'pure-blood'
-  }
-]
 
 const orderStaff=[
   {
@@ -120,35 +85,16 @@ const orderStaff=[
     hogwartsStaff: false
   },
   {
-    name: 'Minerva McGonagall',
-    gender: 'female',
-    house: 'Gryffindor',
-    ancestry: '',
+    name: 'Horace Slughorn',
+    gender: 'male',
+    house: 'Slytherin',
+    ancestry: 'pure-blood',
     hogwartsStudent: false,
-    hogwartsStaff: false
+    hogwartsStaff: true
   }
   
 ]
-const orderFilterStudent=[
-  {
-    name: 'Harry Potter',
-    gender: 'male',
-    house: 'Gryffindor',
-    ancestry: 'half-blood',
-    hogwartsStudent: true,
-    hogwartsStaff: false
-  }
-]
-const orderFilterStaff=[
-  {
-    name: 'Minerva McGonagall',
-    gender: 'female',
-    house: 'Gryffindor',
-    ancestry: '',
-    hogwartsStudent: false,
-    hogwartsStaff: false
-  }
-]
+
 
 describe('orderData', () => {
   
@@ -175,11 +121,28 @@ describe('filterGender', () => {
   });
 
   test('returns male', () => {
-    expect(filterGender(orderDataArray, "male")).toStrictEqual(orderMale);
+    expect(filterGender(orderDataArray, "male")).toStrictEqual([
+      {
+        name: 'Ron Weasley',
+        gender: 'male',
+        house: 'Gryffindor'
+      },
+      {
+        name: 'Harry Potter',
+        gender: 'male',
+        house: 'Gryffindor'
+      }
+    ]);
   });
 
   test('returns female', () => {
-    expect(filterGender(orderDataArray, "female")).toStrictEqual(orderFemale);
+    expect(filterGender(orderDataArray, "female")).toStrictEqual([
+      {
+        name: 'Hermione Granger',
+        gender: 'female',
+        house: 'Gryffindor'
+      }
+    ]);
   });
   
 });
@@ -191,7 +154,13 @@ describe('filterHouse', () => {
   });
 
   test('returns Slytherin', () => {
-    expect(filterHouse(orderHouse, "Slytherin")).toStrictEqual(orderFilterHouse);
+    expect(filterHouse(orderHouse, "Slytherin")).toStrictEqual([
+      {
+        name: 'Draco Malfoy',
+        gender: 'male',
+        house: 'Slytherin'
+      }
+    ]);
   });
 
 });
@@ -203,7 +172,14 @@ describe('filterAncestry', () => {
   });
 
   test('returns Slytherin', () => {
-    expect(filterAncestry(orderAncestry, "pure-blood")).toStrictEqual(orderFilterAncestry);
+    expect(filterAncestry(orderAncestry, "pure-blood")).toStrictEqual([
+      {
+        name: 'Ron Weasley',
+        gender: 'male',
+        house: 'Gryffindor',
+        ancestry: 'pure-blood'
+      }
+      ]);
   });
 
 });
@@ -215,11 +191,29 @@ describe('filterStaff', () => {
   });
 
   test('returns student', () => {
-    expect(filterStaff(orderStaff, "hogwartsStudent")).toStrictEqual(orderFilterStudent);
+    expect(filterStaff(orderStaff, "hogwartsStudent")).toStrictEqual([
+      {
+        name: 'Harry Potter',
+        gender: 'male',
+        house: 'Gryffindor',
+        ancestry: 'half-blood',
+        hogwartsStudent: true,
+        hogwartsStaff: false
+      }
+    ]);
   });
 
   test('returns staff', () => {
-    expect(filterStaff(orderStaff, "hogwartsStaff")).toStrictEqual(orderFilterStaff);
+    expect(filterStaff(orderStaff, "hogwartsStaff")).toEqual([
+      {
+        name: 'Horace Slughorn',
+        gender: 'male',
+        house: 'Slytherin',
+        ancestry: 'pure-blood',
+        hogwartsStudent: false,
+        hogwartsStaff: true
+      }
+    ]);
   });
 
 });

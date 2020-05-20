@@ -27,20 +27,20 @@ function createModal (dataArray) {
                         <p>${dataArray[i].house}</p>
                     </div>
                     <div class="characterInformation2">
-                        <p><strong>Especie:</strong> ${dataArray[i].species}</p>
-                        <p><strong>Género:</strong> ${dataArray[i].gender}</p>
+                        <p><strong>Especie:</strong> ${translate(dataArray[i].species)}</p>
+                        <p><strong>Género:</strong> ${translate(dataArray[i].gender)}</p>
                         <p><strong>Fecha de nacimiento:</strong> ${dataArray[i].dateOfBirth}</p>
                         <p><strong>Año de nacimiento:</strong> ${dataArray[i].yearOfBirth}</p>
-                        <p><strong>Ascendencia:</strong> ${dataArray[i].ancestry}</p>
-                        <p><strong>Color de ojos:</strong> ${dataArray[i].eyeColour}</p>
-                        <p><strong>Color de cabello:</strong> ${dataArray[i].hairColour}</p>
+                        <p><strong>Ascendencia:</strong> ${translate(dataArray[i].ancestry)}</p>
+                        <p><strong>Color de ojos:</strong> ${translate(dataArray[i].eyeColour)}</p>
+                        <p><strong>Color de cabello:</strong> ${translate(dataArray[i].hairColour)}</p>
                         <p><strong>Actor/Actriz:</strong> ${dataArray[i].actor}</p>
-                        <p><strong>Estado:</strong> ${dataArray[i].alive}</p><br>
+                        <p><strong>Estado:</strong> ${dataArray[i].alive ? "Vivo" : "Muerto"}</p><br>
                         <h3><strong>Varita mágica</strong></h3>
-                        <p><strong>Madera:</strong> ${dataArray[i].wand.wood}</p>
-                        <p><strong>Núcleo:</strong> ${dataArray[i].wand.core}</p>
+                        <p><strong>Madera:</strong> ${translate(dataArray[i].wand.wood)}</p>
+                        <p><strong>Núcleo:</strong> ${translate(dataArray[i].wand.core)}</p>
                         <p><strong>Longitud:</strong> ${dataArray[i].wand.length}</p>
-                        <p><strong>Patronus:</strong> ${dataArray[i].patronus}</p>
+                        <p><strong>Patronus:</strong> ${translate(dataArray[i].patronus)}</p>
                     </div>
                 </div>
             </div>`;
@@ -102,8 +102,9 @@ select.addEventListener("change", () =>{ //creamos un listener para cuando se pr
 
 
 //Búsqueda de personajes en tiempo real
+let search = document.getElementById("search");
 search.addEventListener("keyup",()=>{
-    const search = document.querySelector("#search").value; //Traemos la información que ingresa el usuario.
+    let search = document.querySelector("#search").value; //Traemos la información que ingresa el usuario.
     characters.innerHTML = "";
     const informationSearch = search.toLowerCase(); //convierte lo que ingresa el usuario en minúscula.
     let searchArray=[]; //Declaramos el nuevo arreglo para guardar los resultados de la búsqueda.
@@ -204,12 +205,103 @@ selectStaff.addEventListener("change", () =>{
 
 function translate(dataArray){
     let traduccion= [];
-    for(let i=0; i<dataArray.length;i++){
-      if(dataArray[i] == ["human"]){
-        traduccion.push(["Humano"]);
-      }else if (dataArray[i] == "male"){
-        traduccion.push("Hombre");
+        if(dataArray == "human"){
+            traduccion.push("Humano");
+        }if (dataArray == "cat"){
+            traduccion.push("Gato");
+        }if (dataArray == "half-giant"){
+            traduccion.push("Semi gigante");
+        }if (dataArray == "werewolf"){
+            traduccion.push("Hombre lobo");
+        }if (dataArray == "male"){
+            traduccion.push("Hombre");
+        }if (dataArray == "female"){
+            traduccion.push("Mujer");
+        }if(dataArray == "half-blood"){
+            traduccion.push("Sangre mestiza");
+        }if (dataArray == "muggleborn"){
+            traduccion.push("Sangre sucia");
+        }if (dataArray == "pure-blood"){
+            traduccion.push("Sangre pura");
+        }if (dataArray == "green"){
+            traduccion.push("Verdes");
+        }if (dataArray == "brown"){
+            traduccion.push("Cafe");
+        }if (dataArray == "blue"){
+            traduccion.push("Azules");
+        }if(dataArray == "grey"){
+            traduccion.push("Gris");
+        }if (dataArray == "black"){
+            traduccion.push("Negro");
+        }if (dataArray == "red"){
+            traduccion.push("Rojo");
+        }if (dataArray == "yellow"){
+            traduccion.push("Amarillos");
+        }if (dataArray == "blonde"){
+            traduccion.push("Rubio");
+        }if (dataArray == "bald"){
+            traduccion.push("Sin cabello");
+        }if (dataArray == "holly"){
+            traduccion.push("Acebo");
+        }if(dataArray == "vine"){
+            traduccion.push("Vid");
+        }if (dataArray == "willow"){
+            traduccion.push("Sauce");
+        }if (dataArray == "hawthorn"){
+            traduccion.push("Espino");
+        }if (dataArray == "ash"){
+            traduccion.push("fresno");
+        }if(dataArray == "oak"){
+            traduccion.push("Encino");
+        }if (dataArray == "cherry"){
+            traduccion.push("Cerezo");
+        }if (dataArray == "yew"){
+            traduccion.push("Tejo");
+        }if (dataArray == "cypress"){
+            traduccion.push("Cipres");
+        }if (dataArray == "walnut"){
+            traduccion.push("Nogal");
+        }if (dataArray == "cedar"){
+            traduccion.push("Cedro");
+        }if (dataArray == "birch"){
+            traduccion.push("Abedul");
+        }if (dataArray == "elm"){
+            traduccion.push("Olmo");
+        }if (dataArray == "phoenix feather"){
+            traduccion.push("Pluma de fenix");
+        }if (dataArray == "dragon heartstring"){
+            traduccion.push("Fibra de corazón de dragón");
+        }if (dataArray == "unicorn tail-hair"){
+            traduccion.push("Pelo de cola de unicornio");
+        }if (dataArray == "unicorn hair"){
+            traduccion.push("Pelo de unicornio");
+        }if (dataArray == "stag"){
+            traduccion.push("Ciervo");
+        }if (dataArray == "otter"){
+            traduccion.push("Nutria");
+        }if (dataArray == "Jack Russell terrier"){
+            traduccion.push("Perro Jack Russell terrier");
+        }if (dataArray == "tabby cat"){
+            traduccion.push("Gato atigrado");
+        }if (dataArray == "swan"){
+            traduccion.push("Cisne");
+        }if (dataArray == "doe"){
+            traduccion.push("Cierva");
+        }if (dataArray == "hare"){
+            traduccion.push("Liebre");
+        }if (dataArray == "horse"){
+            traduccion.push("Caballo");
+        }if (dataArray == "wolf"){
+            traduccion.push("Lobo");
+        }if (dataArray == "weasel"){
+            traduccion.push("Comadreja");
+        }if (dataArray == "lynx"){
+            traduccion.push("Lince");
+        }if (dataArray == "persian cat"){
+            traduccion.push("Gato persa");
+        }if (dataArray == ""){
+            traduccion.push("No es mencionado");
         }
-    }
+    console.log("3", traduccion);
     return traduccion;
 }

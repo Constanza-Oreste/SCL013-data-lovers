@@ -6,24 +6,26 @@
 <br>
 Guía muggle, es una página web que le brinda a los usuarios una biblioteca con información relevante sobre los personajes de la saga de Harry Potter. En esta web, el usuario podrá indagar sobre las casas, los patronus, las características de sus varitas, entre otras muchas peculiaridades pertenecientes a cada uno de las personalidades presentes en la película. <br>
 Esta web está dirigida a 3 tipos de usuarios (casual, aficionado y fanático),  los cuales podrán clasificar todos los personajes por orden albafético, podrán buscar por los nombres de cada uno de ellos y podrán seleccionar diferentes buscadores específicos de acuerdo a sus intereses y conocimientos.
-<br>
+<br><br>
 • Para conocer nuestra página web [haz click aquí](https://valeriaconstanzabc.github.io/SCL013-data-lovers/src/index.html)
 
 ***
-## TABLA DE CONTENIDOS<br> 
+## TABLA DE CONTENIDOS :scroll: <br> 
 * [1. Contexto](##1-CONTEXTO)
 * [2. Usuario](##2-USUARIO)
 * [3. Prototipos](##3-PROTOTIPOS)
 * [4. Metodología UX](##4-METODOLOGÍA-UX)
 * [5. Decisiones de diseño](##5-DECISIONES-DE-DISEÑO)
-* [6. Organización de trabajo](##6-ORGANIZACIÓN-DE-TRABAJO)
+* [6. Test unitarios](##6-TEST-UNITARIOS)
+* [7. Organización de trabajo](##6-ORGANIZACIÓN-DE-TRABAJO)
 ***
 
-## 1. CONTEXTO
+## 1. CONTEXTO :speech_balloon:
 
 Harry Potter es una serie de novelas fantásticas escrita por la autora británica J. K. Rowling, en la que se describen 
 las aventuras del joven aprendiz de magia y hechicería Harry Potter y sus amigos Hermione Granger y Ron Weasley, 
 durante los años que pasan en el Colegio Hogwarts de Magia y Hechicería.<br>
+
 Desde el lanzamiento de la primera novela, Harry Potter y la piedra filosofal, en 1997, la serie logró una inmensa popularidad 
 alrededor del mundo, por lo que para julio de 2013 se habían vendido entre 400 y 450 millones de ejemplares de los siete libros.
 Luego de este arrebatador éxito, se realizó la serie cinematográfica de Harry Potter, la cual comprende ocho películas protagonizadas 
@@ -38,7 +40,7 @@ todas estrenadas en el decenio comprendido entre 2001 y 2011.<br>
 
 ***
 
-## 2. USUARIO
+## 2. USUARIO :pencil:
 En nuestro proyecto nos centramos en un usuario general que desea informarse más sobre los personajes de la saga de Harry Potter y que busca una librería informativa de ellos. Al ser un usuario un tanto ambiguo, esta guía da la posibilidad de que tanto los visitantes casuales (con poco conocimiento) y los visitantes fanáticos (con mucho conocimiento) sobre la película, puedan acceder y entender todo lo que nuestra plataforma les ofrece. Para esto, fue necesario definir a tres principales usuarios, los cuales nos permitieron abarcar sus diferentes necesidades y que más adelante detallaremos.
 
 ### 2.1 Objetivos/ criterios de aceptación
@@ -92,7 +94,7 @@ Al entrar a la página se entusiasmará por el recibimiento de esta, e intuitiva
 
 ***
 
-## 3 PROTOTIPOS
+## 3 PROTOTIPOS :flower_playing_cards:
 
 ### 3.1 Diagrama de Flujos
 
@@ -108,11 +110,13 @@ Al entrar a la página se entusiasmará por el recibimiento de esta, e intuitiva
 ![prototipoAltaFidelidad](/src/imagenes/imagenesReadme/prototipoDos.JPG) 
 ![prototipoAltaFidelidad](/src/imagenes/imagenesReadme/prototipoTres.JPG) 
 
-• Para conocer nuestro prototipo de alta fidelidad [haz click aquí](https://www.figma.com/proto/76yBVBhZPNfs3Tc2Cfh2RF/Untitled?node-id=173%3A1&scaling=scale-down)
+• Para conocer nuestro prototipo de alta fidelidad versión web [haz click aquí](https://www.figma.com/proto/76yBVBhZPNfs3Tc2Cfh2RF/Untitled?node-id=173%3A1&scaling=scale-down)
+<br>
+• Para conocer nuestro prototipo de alta fidelidad versión phone [haz click aquí](https://www.figma.com/proto/76yBVBhZPNfs3Tc2Cfh2RF/Untitled?node-id=53%3A2&scaling=contain)
 
 ***
 
-## 4. METODOLOGÍA UX
+## 4. METODOLOGÍA UX :bar_chart:
 
 ### 4.1 Testeos de usabilidad
 
@@ -144,7 +148,7 @@ Los resultados de este testeo son los siguientes:
 
 ***
 
-## 5. DECISIONES DE DISEÑO
+## 5. DECISIONES DE DISEÑO :art:
 
 Comúnmente, las películas de Harry Potter han sido asociadas al drama, la oscuridad, el misterio y el suspenso.
 Debido a esto, hemos decidido representarla mediante una gama cromática que nos advierte la muerte y la oscuridad, por lo que el negro, el gris y las tonalidades de azules sombríos, han sido los encargados de representar esta película en nuestra página.
@@ -168,7 +172,16 @@ De acuerdo con la psicología del color, el azul marino se relaciona con signos 
 
 ***
 
-## 6. ORGANIZACIÓN DE TRABAJO
+## 6. TEST UNITARIOS :white_check_mark:
+
+Realizamos test unitarios con los siguientes resultados: <br>
+
+![TestUnitarios](/src/imagenes/imagenesReadme/test1.jpg)
+
+![TestUnitarios](/src/imagenes/imagenesReadme/test2.JPG)
+
+***
+## 7. ORGANIZACIÓN DE TRABAJO :books:
 
 Como equipo de trabajo nos organizamos mediante una plataforma llamada miro, en donde en primera instancia fuimos reuniendo toda la información UX que fuimos recolectando. También planificamos nuestro tiempo semana a semana y plasmamos los pasos a seguir para realizar cada una de las historias de usuario que nos propusimos.
 
